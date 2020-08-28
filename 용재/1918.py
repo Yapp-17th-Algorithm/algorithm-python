@@ -1,3 +1,6 @@
+# https://www.acmicpc.net/problem/1918
+# 후위 표기식
+
 getText = input()
 
 symbolPriority = {

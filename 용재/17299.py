@@ -27,11 +27,10 @@ stack.append(0)
 
 index = 1
 
-while stack and index < N:
+while index < N:
   while stack and F[inputNumbers[stack[-1]]] < F[inputNumbers[index]]:
-    answer[stack[-1]] = inputNumbers[index]
-    stack.pop()
+    answer[stack.pop()] = inputNumbers[index]
   stack.append(index)
   index += 1
 
-print(' '.join(map(str, answer)))
+print(*answer)

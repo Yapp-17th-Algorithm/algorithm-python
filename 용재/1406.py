@@ -5,23 +5,21 @@ getText = list(input())
 
 N = int(input())
 
-inputNumbers = [str(input()) for _ in range(N)]
+inputNumbers = [input().split() for _ in range(N)]
 
 L = len(getText)
 
 restText = []
 
+COMMAND, CHAR = 0, 1
 for i in inputNumbers:
-  if i[0] == "L":
-    if len(getText) > 0:
-      restText.append(getText.pop())
-  elif i[0] == "D":
-    if len(restText) > 0:
-      getText.append(restText.pop())
-  elif i[0] == "B":
-    if len(getText) > 0:
-      getText.pop()
-  elif i[0] == "P":
-    getText.append(i[2])
+  if i[COMMAND] == "L" and getText:
+    restText.append(getText.pop())
+  elif i[COMMAND] == "D" and restText:
+    getText.append(restText.pop())
+  elif i[COMMAND] == "B" and getText:
+    getText.pop()
+  elif i[COMMAND] == "P":
+    getText.append(i[CHAR])
 
 print(''.join(getText + restText[::-1]))

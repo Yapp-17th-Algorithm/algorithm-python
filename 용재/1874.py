@@ -13,8 +13,9 @@ index = 0
 flag = False
 
 for each in inputNumbers:
+  # TODO: refactoring later
   while True:
-    if len(stack) == 0 or stack[-1] != each:
+    if not stack or stack[-1] != each:
       index += 1
       answer.append('+')
       stack.append(index)

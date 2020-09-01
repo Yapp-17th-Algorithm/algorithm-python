@@ -1,10 +1,10 @@
+# https://www.acmicpc.net/problem/1935
+# 후위 표기식 2
+
 N = int(input())
 getText = input()
 
-inputNumbers = []
-
-for i in range(N):
-  inputNumbers.append(int(input()))
+inputNumbers = [int(input()) for _ in range(N)]
 
 stack = []
 
@@ -16,11 +16,11 @@ for each in getText:
     left = stack.pop()
     if each == '+':
       stack.append(left + right)
-    if each == '-':
+    elif each == '-':
       stack.append(left - right)
-    if each == '*':
+    elif each == '*':
       stack.append(left * right)
-    if each == '/':
+    else:
       stack.append(left / right)
 
 print('%.2f' % stack[0])

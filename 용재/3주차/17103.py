@@ -17,10 +17,8 @@ N = [int(input()) for _ in range(T)]
 
 for each in N:
   answer = 0
-  for i in range(2, math.floor(each / 2) + 1):
-    if primes[i] == True and primes[each - i] == True:
+  for i in range(2, each // 2 + 1):
+    if primes[i] and primes[each - i]:
       answer += 1
-    else:
-      continue
 
   print(answer)

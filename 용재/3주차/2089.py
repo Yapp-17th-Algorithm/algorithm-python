@@ -13,7 +13,7 @@ if not N:
 while N:
   if N % -2:
     answer = '1' + answer
-    N = math.floor(N / -2) + 1
+    N //= -2 + 1
   else:
     answer = '0' + answer
     N = math.floor(N / -2)

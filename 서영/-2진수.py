@@ -7,14 +7,11 @@ from sys import stdin
 N = int(stdin.readline())
 
 ans = ""
-while N > 1 or N < 0:
+while N:
     if N % 2:
         ans += "1"
         N = N // -2 + 1
     else:
         ans += "0"
         N = N // -2
-
-ans += "1" if N else "0"
 print(ans[::-1])
-

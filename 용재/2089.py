@@ -3,7 +3,7 @@
 
 import math
 
-N = int(input());
+N = int(input())
 
 answer = ''
 
@@ -18,4 +18,4 @@ while N:
     answer = '0' + answer
     N = math.floor(N / -2)
 
-print(answer);
+print(answer)

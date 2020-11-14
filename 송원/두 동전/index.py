@@ -58,7 +58,8 @@ def move_item(from_Q, to_Q):
         else:
           positions.append((c2[0], c2[1]))
 
-        to_Q.append(positions)
+        if positions not in to_Q:
+          to_Q.append(positions)
 
 while Q1 or Q2:
   if count > 10:
